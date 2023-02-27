@@ -9,13 +9,21 @@ chcp 65001
 ::========================================================================================================================================
 : Basic settings 
 : KMS Server
-set K1=kms.loli.best
-set K2=kms.cnlic.com
-set K3=kms.digiboy.ir
+set K1=kms.catqu.com
+set K2=kms.myds.cloud
+set K3=kms.wxlost.com
 set K4=kms.ddns.net
-set K5=kms789.com
+set K5=kms.luody.info
 
 : Windows activation key
+: Windows Vista
+set WVB=Windows Vista Business
+set WVE=Windows Vista Enterprise
+
+: Windows 7
+set W7P=Windows 7 Pro
+set W7E=Windows 7 Enterprise
+
 : Windows 8.1
 set W8.1P=Windows 8.1 Pro
 set W8.1E=Windows 8.1 Enterprise
@@ -144,9 +152,9 @@ echo ************************************************************
 echo #This script was developed by Ryker Lim
 echo #Github:https://github.com/Ryker0603
 echo #This script uses from https://github.com/LulzSecToolkit/KMS-activator-V-X/blob/master/Check-Activation-Status-Alternative.cmd as a script for Check Activation Status Alternative
-echo #This script uses KMS to activate Windows 8 above Windows systems.
-echo #Version: 1.0
-echo #Version number:202201280
+echo #This script uses KMS to activate Windows Vista above Windows systems.
+echo #Version: 1.1
+echo #Version number:202302270
 echo.
 pause 
 exit /b
@@ -159,24 +167,84 @@ mode con cols=98 lines=30
 echo:
 echo:
 echo                   _______________________________________________________________
+echo                  ^|                                                               ^|
+echo                  ^|      [1] Windows Vista                                        ^|
+echo                  ^|                                                               ^|
+echo                  ^|      [2] Windows 7                                            ^|
 echo                  ^|                                                               ^| 
-echo                  ^|      [1] Windows 8.1                                          ^|
+echo                  ^|      [3] Windows 8.1                                          ^|
 echo                  ^|                                                               ^|
-echo                  ^|      [2] Windows 10                                           ^|
+echo                  ^|      [4] Windows 10                                           ^|
 echo                  ^|                                                               ^|
-echo                  ^|      [3] Windows 11                                           ^|
+echo                  ^|      [5] Windows 11                                           ^|
 echo                  ^|                                                               ^|
-echo                  ^|      [4] %EXIT%                                                 ^|
+echo                  ^|      [6] %EXIT%                                                 ^|
 echo                  ^|_______________________________________________________________^|
 echo:          
-%ENCK% /C:1234 /N /M ">                   Enter Your Choice in the Keyboard [1,2,3...] : "
-%TCCK% /C:1234 /N /M ">                   在鍵盤中輸入您的選擇 [1,2,3...] : "
-%SCCK% /C:1234 /N /M ">                   在键盘中输入您的选择 [1,2,3...] : "
+%ENCK% /C:123456 /N /M ">                   Enter Your Choice in the Keyboard [1,2,3...] : "
+%TCCK% /C:123456 /N /M ">                   在鍵盤中輸入您的選擇 [1,2,3...] : "
+%SCCK% /C:123456 /N /M ">                   在键盘中输入您的选择 [1,2,3...] : "
 
-if errorlevel  4 exit /b
-if errorlevel  3 setlocal & call :Win11 & cls & endlocal & goto :MainMenu
-if errorlevel  2 setlocal & call :Win10 & cls & endlocal & goto :MainMenu
-if errorlevel  1 setlocal & call :Win8 & cls & endlocal & goto :MainMenu
+if errorlevel  6 exit /b
+if errorlevel  5 setlocal & call :Win11 & cls & endlocal & goto :MainMenu
+if errorlevel  4 setlocal & call :Win10 & cls & endlocal & goto :MainMenu
+if errorlevel  3 setlocal & call :Win8 & cls & endlocal & goto :MainMenu
+if errorlevel  2 setlocal & call :Win7 & cls & endlocal & goto :MainMenu
+if errorlevel  1 setlocal & call :WinV & cls & endlocal & goto :MainMenu
+:+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+:WinV
+cls
+mode con cols=98 lines=30
+
+echo:
+echo:
+echo                   _______________________________________________________________
+echo                  ^|                                                               ^|
+%EN%                  ^|      [1] Windows Vista Business                               ^|
+%TC%                  ^|      [1] Windows Vista 商業版                                 ^|
+%SC%                  ^|      [1] Windows Vista 商业版                                 ^|
+echo                  ^|                                                               ^|
+%EN%                  ^|      [2] Windows Vista Enterprise                             ^|
+%TC%                  ^|      [2] Windows Vista 企業版                                 ^|
+%SC%                  ^|      [2] Windows Vista 企业版                                 ^|
+echo                  ^|                                                               ^|
+echo                  ^|      [3] %EXIT%                                                 ^|
+echo                  ^|_______________________________________________________________^|
+echo:          
+%ENCK% /C:123 /N /M ">                   Enter Your Choice in the Keyboard [1,2,3...] : "
+%TCCK% /C:123 /N /M ">                   在鍵盤中輸入您的選擇 [1,2,3...] : "
+%SCCK% /C:123 /N /M ">                   在键盘中输入您的选择 [1,2,3...] : "
+
+if errorlevel  3 exit /b
+if errorlevel  2 cls & echo %WVE% &ping 127.0.0.1 -n 5 >nul & goto :KMS test
+if errorlevel  1 cls & echo %WVB%  &ping 127.0.0.1 -n 5 >nul & goto :KMS test
+:+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+:Win7
+cls
+mode con cols=98 lines=30
+
+echo:
+echo:
+echo                   _______________________________________________________________
+echo                  ^|                                                               ^|
+%EN%                  ^|      [1] Windows 7 Pro                                        ^|
+%TC%                  ^|      [1] Windows 7 專業版                                     ^|
+%SC%                  ^|      [1] Windows 7 专业版                                     ^|
+echo                  ^|                                                               ^|
+%EN%                  ^|      [2] Windows 7 Enterprise                                 ^|
+%TC%                  ^|      [2] Windows 7 企業版                                     ^|
+%SC%                  ^|      [2] Windows 7 企业版                                     ^|
+echo                  ^|                                                               ^|
+echo                  ^|      [3] %EXIT%                                                 ^|
+echo                  ^|_______________________________________________________________^|
+echo:          
+%ENCK% /C:123 /N /M ">                   Enter Your Choice in the Keyboard [1,2,3...] : "
+%TCCK% /C:123 /N /M ">                   在鍵盤中輸入您的選擇 [1,2,3...] : "
+%SCCK% /C:123 /N /M ">                   在键盘中输入您的选择 [1,2,3...] : "
+
+if errorlevel  3 exit /b
+if errorlevel  2 cls & echo %W7E% &ping 127.0.0.1 -n 5 >nul & goto :KMS test
+if errorlevel  1 cls & echo %W7P%  &ping 127.0.0.1 -n 5 >nul & goto :KMS test
 :+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 :Win8
 cls
