@@ -15,7 +15,7 @@ It is composed of basic commands such as: slmgr /ipk,slmgr.vbs /skms, slmgr.vbs 
 (Manual selection of system version, no automatic activation function)
 
 ### Notice :
-- Currently only supports Windows 8 above system
+- Currently only supports Windows 7 above system
 - Internet connection required
 - Currently only supports English, Simplified Chinese and Traditional Chinese languages
 - The author is not responsible for anything that happens on your system as a result of this product
